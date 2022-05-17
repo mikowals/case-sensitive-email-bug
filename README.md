@@ -22,6 +22,8 @@ Meteor.startup(() => {
 
 The server never logs any output for 'Bob' only for 'bill'. The client logs both results as if they completed without error.
 
+I encountered this in real application with `MAIL_URL` set and using real email addresses. The SMTP service does not show any evidence that an email was attempted if the initial client request capitalizes the email.
+
 ### Server output:
 
 ```
