@@ -12,7 +12,7 @@ Browse to `http://localhost:3000` to trigger the client startup callback.
 
 The server console shows no evidience of a requested login token for `Bob@example.com`. The request for `bill@example.com` shows an email and token as expected. I think the difference is the capital first letter and I have reproduced it with my own email failing only when capitalized.
 
-No error is logged on the client or server so the server fails silently.
+No error is logged on the client or server.
 
 ## Explanation of Repo
 
