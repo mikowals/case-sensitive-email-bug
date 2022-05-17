@@ -1,6 +1,22 @@
 # Reproduction of possible bug in Accounts.requestLoginTokenForUser
 
-After `meteor create case-sensitive-email-bug` updated `client/main.jsx`:
+Steps to Reproduce:
+
+```
+git clone https://github.com/mikowals/case-sensitive-email-bug.git`
+cd case-sensitive-email-bug
+meteor
+```
+
+Browse to `https://localhost:3000` to trigger the client startup callback.
+
+The server console shows no evidience of a requested login token for `Bob@example.com`. The request for `bill@example.com` shows an email and token as expected. I think the difference is the capital first letter and I have reproduced it with my own email failing only when capitalized.
+
+No error is logged on the client or server so the server fails silently.
+
+## Explanation of Repo
+
+After `meteor create case-sensitive-email-bug` I updated the `client/main.jsx`:
 
 ```
 Meteor.startup(() => {
